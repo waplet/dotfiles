@@ -19,7 +19,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 " Plug 'chriskempson/base16-vim'
 " Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'drmikehenry/vim-fontsize'
+Plug 'drmikehenry/vim-fontsize'
 " Plug 'ervandew/supertab'
 " Plug 'ggVGc/vim-fuzzysearch'
 " Plug 'guns/vim-clojure-static'
@@ -36,7 +36,7 @@ Plug 'luochen1990/rainbow'
 " Plug 'majutsushi/tagbar'
 " Plug 'mattn/gist-vim'
 " Plug 'mattn/webapi-vim'
-" Plug 'mhinz/vim-sayonara'
+Plug 'mhinz/vim-sayonara'
 " Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
 " Plug 'mxw/vim-jsx'
@@ -99,8 +99,8 @@ endfunc
 
 " Adding base keymaps
 
-map <C-T> :tabe<CR>
-map <C-W> :tabc<CR>
+" map <C-T> :tabe<CR>
+" map <C-W> :tabc<CR>
 
 " Disabled folds
 set nofoldenable
@@ -166,6 +166,12 @@ let g:last_tab = 1
 nmap <Space><Space> :execute "tabn " . g:last_tab<CR>
 au TabLeave * let g:last_tab = tabpagenr()
 
+" Mappings for controlling splits.
+nmap <M-h> <C-w>h
+nmap <M-j> <C-w>j
+nmap <M-k> <C-w>k
+nmap <M-l> <C-w>l
+
 " Wrap-friendly <j> and <k> keys.
 nmap j gj
 nmap k gk
@@ -190,9 +196,9 @@ nmap + gg=G2<C-o>
 
 " Copy/pasting from/to system clipboard.
 vmap <C-c> "+y
-nmap <C-v> "+p
-imap <C-v> <C-o>"*P
-cmap <C-v> <C-r>+
+nmap <C-S-v> "+p
+imap <C-S-v> <C-o>"*P
+cmap <C-S-v> <C-r>+
 cmap <S-Insert> <C-r>+
 
 cmap <C-t> <C-a>tabe \| <C-e>
