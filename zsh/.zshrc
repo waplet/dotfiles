@@ -122,3 +122,4 @@ function glg {
 }
 
 eval `dircolors /home/mjankovskis/.dir_colors/dircolors`
+alias vim='gvim'

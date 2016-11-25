@@ -50,7 +50,7 @@ Plug 'nelstrom/vim-visual-star-search'
 " Plug 'sjl/gundo.vim'
 " Plug 'suan/vim-instant-markdown'
 " Plug 'tpope/vim-abolish'
-" Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 " Plug 'tpope/vim-dispatch'
 " Plug 'tpope/vim-eunuch'
 " Plug 'tpope/vim-fireplace'
@@ -368,6 +368,7 @@ if has('gui_running')
 
     " Sets font.
     " set guifont=Inconsolata-g\ for\ Powerline\ Medium\ 9
+    set guifont=Monospace\ 9
 
     " Blink faster!
     set guicursor+=n-v-c:blinkon200
