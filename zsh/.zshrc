@@ -55,6 +55,10 @@ plugins=(git symfony2)
 # User configuration
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/dev/scripts"
+
+# i3 snippets
+export PATH="$PATH:$HOME/.i3/snippets"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
