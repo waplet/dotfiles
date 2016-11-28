@@ -256,9 +256,11 @@ au filetype gitcommit call AuFtGitCommit()
 
 " Sets color-scheme.
 " colorscheme slate
-set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_termtrans=1
+set background=dark
 
 " Minor adjustments to colorschemes.
 func! AuColorScheme()
