@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/waplet/.oh-my-zsh
+  export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -54,7 +54,7 @@ plugins=(git symfony2)
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/waplet/dev/scripts"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/dev/scripts"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -89,10 +89,7 @@ alias ll='ls -alF'
 alias la='la -A'
 alias l='ls -CF'
 
-export REP='svn+ssh://neo/svnroot'
-export HTML="cd /mnt/sshfs/public_html"
-
-DEFAULT_USER=waplet
+DEFAULT_USER=$USER
 
 unalias gl
 unalias glg
@@ -121,5 +118,7 @@ function glg {
     git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' $@
 }
 
-eval `dircolors /home/waplet/.dir_colors/dircolors`
+if [[ -a "$HOME/.dir_colors" ]]; then
+    eval `dircolors $HOME/.dir_colors/dircolors`
+fi
 alias vim='gvim'
