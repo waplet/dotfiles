@@ -125,4 +125,4 @@ function glg {
 if [[ -a "$HOME/.dir_colors" ]]; then
     eval `dircolors $HOME/.dir_colors/dircolors`
 fi
-alias vim='gvim'
+# alias vim='gvim'

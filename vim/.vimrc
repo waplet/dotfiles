@@ -67,6 +67,7 @@ Plug 'vim-scripts/SQLUtilities'
 Plug 'vim-utils/vim-husk'
 " Plug 'wellle/targets.vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'mhartington/oceanic-next'
 " Required by vim-plug.
 call plug#end()
 
@@ -167,10 +168,11 @@ nmap <Space><Space> :execute "tabn " . g:last_tab<CR>
 au TabLeave * let g:last_tab = tabpagenr()
 
 " Mappings for controlling splits.
-nmap <M-h> <C-w>h
-nmap <M-j> <C-w>j
-nmap <M-k> <C-w>k
-nmap <M-l> <C-w>l
+" Was <M-h> instead of <Esc>h
+nmap <Esc>h <C-w>h
+nmap <Esc>j <C-w>j
+nmap <Esc>k <C-w>k
+nmap <Esc>l <C-w>l
 
 " Wrap-friendly <j> and <k> keys.
 nmap j gj
@@ -207,8 +209,8 @@ cmap <C-t> <C-a>tabe \| <C-e>
 map q: :q
 
 " Jump to next/previous function.
-nmap <PageUp> [mzz
-nmap <PageDown> ]mzz
+nmap <PageUp> <C-u>
+nmap <PageDown> <C-d>
 
 " Always go to exact position of the mark.
 nmap ' `
@@ -254,60 +256,9 @@ func! AuFtGitCommit()
 endfunc
 au filetype gitcommit call AuFtGitCommit()
 
-" Sets color-scheme.
-" colorscheme slate
-colorscheme solarized
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_termtrans=1
-set background=dark
 
-" Minor adjustments to colorschemes.
-func! AuColorScheme()
-
-    if g:colors_name == "slate"
-        hi def link HighlightNext WarningMsg
-    endif
-
-    if g:colors_name == "base16-eighties"
-        hi Comment guifg=#A09F93
-        hi StatusLine guifg=#F2F0EC guibg=#515151
-        hi Wildmenu guifg=#2D2D2D guibg=#6699CC
-
-        hi Cursor guibg=#6699CC
-
-        " Completion menu.
-        hi Pmenu guifg=#F2F0EC guibg=#515151
-        hi PmenuSel guifg=#2D2D2D guibg=#6699CC
-        " Blends out right sidebar.
-        hi PmenuThumb guibg=#2D2D2D
-        hi PmenuSbar guibg=#2D2D2D
-
-        hi HighlightNext guibg=#F2777A
-
-        hi SneakPluginTarget guifg=black guibg=#A09F93 ctermfg=black ctermbg=white
-
-        hi SyntasticErrorSign guibg=#F2777A guifg=#393939
-        hi SyntasticStyleErrorSign guibg=#FFCC66 guifg=#2D2D2D
-
-        hi GitGutterAdd guifg=#99CC99
-        hi GitGutterChange guifg=#FFCC66
-        hi GitGutterDelete guifg=#F2777A
-        hi GitGutterChangeDelete guifg=#F99157
-
-        hi Flashy guibg=#FFCC66
-
-        let g:airline_theme = "base16eighties"
-    endif
-
-    if g:colors_name == "flatlandia"
-        hi HighlightNext guibg=#aa2915
-        hi Comment guifg=#798188
-        hi SignColumn guibg=#3b3e40
-        hi SneakPluginTarget guifg=black guibg=#aa2915 ctermfg=black ctermbg=red
-    endif
-endfunc
-au ColorScheme * call AuColorScheme()
+"" OceanicNext related
+colorscheme OceanicNext
 
 "
 " Leader mappings (leaders).
@@ -361,16 +312,16 @@ nmap <Leader>w :w<CR>
 
 
 if has('gui_running')
+    " Sets color-scheme.
+    " colorscheme slate
+    " Solarized related
+    " colorscheme solarized
+    " let g:solarized_termcolors=256
+    " let g:solarized_contrast="high"
+    " let g:solarized_termtrans=1
+    " set background=dark
 
-    " Sets your fave color-scheme.
-    " colorscheme badwolf
-    " colorscheme base16-default
-    " colorscheme base16-eighties
-    " colorscheme flattown
-    " colorscheme gruvbox
-    " colorscheme molokai
-    " colorscheme flatlandia
-
+    colorscheme solarized
     " Removes all GUI stuff.
     set guioptions=c
 
@@ -382,7 +333,6 @@ if has('gui_running')
     set guicursor+=n-v-c:blinkon200
 
 endif
-
 
 "
 " Rainbow configuration.
@@ -424,3 +374,23 @@ let g:rainbow_conf = {
 "
 
 let g:colorizer_startup = 0
+
+
+"
+" Airline configuration.
+"
+
+let g:airline_powerline_fonts = 1
+
+"
+" Nerd tree
+"
+
+nmap <C-k><C-b> :NERDTreeToggle<CR>
+
+"
+" Commentary
+"
+
+map <C-_> :Commentary<CR>
+
