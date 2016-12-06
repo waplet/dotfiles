@@ -265,7 +265,7 @@ bar {
 # Program bindings
   # bindsym $mod+Return exec i3-sensible-terminal
   bindsym $mod+Return exec gnome-terminal
-  bindsym $mod+d exec export PATH="/home/waplet/dev/scripts/:$PATH" && rofi -show run -lines 4 -eh 2 -width 100 -padding 220 -opacity 85 -bw 0 -bg "$base01" -fg "$base07" -hlbg "$base01" -hlfg "#9575cd" -font "SNFS Display 16"
+  bindsym $mod+d exec rofi -show run -lines 4 -eh 2 -width 100 -padding 220 -opacity 85 -bw 0 -bg "$base01" -fg "$base07" -hlbg "$base01" -hlfg "#9575cd" -font "SNFS Display 16"
   bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 #  bindsym F2 exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
   bindsym F2 exec --no-startup-id i3-dmenu-desktop
