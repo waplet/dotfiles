@@ -125,4 +125,8 @@ function glg {
 if [[ -a "$HOME/.dir_colors" ]]; then
     eval `dircolors $HOME/.dir_colors/dircolors`
 fi
-# alias vim='gvim'
+
+if [[ -a "$HOME/.nvm" ]]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+fi
