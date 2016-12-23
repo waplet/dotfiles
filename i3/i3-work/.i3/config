@@ -253,6 +253,7 @@ bar {
   exec nm-applet
   exec skype
   exec volumeicon
+  exec ~/dev/scripts/i3l.sh
 
 # Yakuake style console
   # for_window [class="^floating\-console"] floating enable; resize shrink width 10000px; resize grow width 1915px; 
