@@ -48,7 +48,7 @@ Plug 'nelstrom/vim-visual-star-search'
 Plug 'scrooloose/nerdtree'
 " Plug 'scrooloose/syntastic'
 " Plug 'sjl/gundo.vim'
-" Plug 'suan/vim-instant-markdown'
+Plug 'suan/vim-instant-markdown' " https://github.com/suan/vim-instant-markdown 
 " Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 " Plug 'tpope/vim-dispatch'
