@@ -56,8 +56,8 @@ plugins=(git symfony2 autojump)
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/dev/scripts"
 
-# i3 snippets
-export PATH="$PATH:$HOME/.i3/snippets"
+# snippets
+export PATH="$PATH:$HOME/snippets"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
