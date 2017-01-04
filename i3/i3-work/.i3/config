@@ -149,12 +149,12 @@
 # Mode shutdown
   set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
   mode "$mode_system" {
-    bindsym l exec --no-startup-id ~/dev/scripts/i3exit.sh lock, mode "default"
-    bindsym e exec --no-startup-id ~/dev/scripts/i3exit.sh logout, mode "default"
-    bindsym s exec --no-startup-id ~/dev/scripts/i3exit.sh suspend, mode "default"
-    bindsym h exec --no-startup-id ~/dev/scripts/i3exit.sh hibernate, mode "default"
-    bindsym r exec --no-startup-id ~/dev/scripts/i3exit.sh reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id ~/dev/scripts/i3exit.sh shutdown, mode "default"
+    bindsym l exec --no-startup-id ~/snippets/i3exit.sh lock, mode "default"
+    bindsym e exec --no-startup-id ~/snippets/i3exit.sh logout, mode "default"
+    bindsym s exec --no-startup-id ~/snippets/i3exit.sh suspend, mode "default"
+    bindsym h exec --no-startup-id ~/snippets/i3exit.sh hibernate, mode "default"
+    bindsym r exec --no-startup-id ~/snippets/i3exit.sh reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id ~/snippets/i3exit.sh shutdown, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -227,15 +227,15 @@ bar {
 
 # Lock
   # bindsym $mod+l exec i3lock --color "$base01"
-  # bindsym $mod+l exec ~/dev/scripts/lock.sh ~/Pictures/icon.png
+  # bindsym $mod+l exec ~/snippets/lock.sh ~/Pictures/icon.png
   # bindsym $mod+l exec i3lock -u -t --image ~/Pictures/wallpaper.png
-  bindsym $mod+l exec ~/dev/scripts/i3l.sh
+  bindsym $mod+l exec ~/snippets/i3l.sh
 
 # Spotify
 # Mod2 is some workaround for i3 --version > 4.12
-  bindsym Control+Mod2+KP_5 exec ~/dev/scripts/spotify_remote.sh playpause
-  bindsym Control+Mod2+KP_6 exec ~/dev/scripts/spotify_remote.sh next
-  bindsym Control+Mod2+KP_4 exec ~/dev/scripts/spotify_remote.sh previous
+  bindsym Control+Mod2+KP_5 exec ~/snippets/spotify_remote.sh playpause
+  bindsym Control+Mod2+KP_6 exec ~/snippets/spotify_remote.sh next
+  bindsym Control+Mod2+KP_4 exec ~/snippets/spotify_remote.sh previous
   bindsym Control+Mod2+KP_7 exec --no-startup-id amixer -D pulse sset Master 5%-
   bindsym Control+Mod2+KP_9 exec --no-startup-id amixer -D pulse sset Master 5%+
 
@@ -248,12 +248,12 @@ bar {
   exec_always --no-startup-id compton
   exec_always --no-startup-id xset m 00
   exec_always --no-startup-id setxkbmap lv -variant basic
-  exec --no-startup-id xautolock -time 10 -locker '~/dev/scripts/i3l.sh' -detectsleep &
+  exec --no-startup-id xautolock -time 10 -locker '~/snippets/i3l.sh' -detectsleep &
   # exec --no-startup-id "i3-msg 'workspace $workspace9; append_layout /home/mjankovskis/.i3/workspaces/9.json'"
   exec nm-applet
   exec skype
   exec volumeicon
-  exec ~/dev/scripts/i3l.sh
+  exec ~/snippets/i3l.sh
 
 # Yakuake style console
   # for_window [class="^floating\-console"] floating enable; resize shrink width 10000px; resize grow width 1915px; 
