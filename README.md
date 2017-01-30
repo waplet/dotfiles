@@ -6,7 +6,7 @@ Some base dependencies are:
    * `i3lock` (preferrably i3lock-color)
    * `i3blocks`
    * `feh` - for setting wallpaper in i3 background
-   * `compoton` - for transparent rofi menu
+   * `compton` - for transparent rofi menu
    * `xautolock` - for executing lock script
    * `xrandr` - for possible monitor position
    * `nm-applet` - for networking icon in tray
