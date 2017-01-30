@@ -55,9 +55,11 @@
 # General configuration
   font pango: SNFS Display 10
   floating_modifier $mod
-  focus_follows_mouse yes
+  focus_follows_mouse no
   mouse_warping none
   workspace_auto_back_and_forth yes
+  no_focus [window_role="pop-up"] # ??
+  focus_on_window_activation urgent
 
 # Bindings
   bindsym $mod+Shift+q kill
@@ -137,6 +139,7 @@
   for_window [class="vlc"] floating enable
   for_window [class="Wine"] floating enable
   for_window [class="(?i)yakyak"] floating disable
+  for_window [window_role="pop-up"] floating enable
 
 # Move the current workspace to the next output
 # (effectively toggles when you only have two outputs)
@@ -166,10 +169,10 @@
   mode "  " {
     # These bindings trigger as soon as you enter the resize mode
 
-    bindsym j resize shrink width 10 px or 10 ppt
-    bindsym k resize grow height 10 px or 10 ppt
-    bindsym l resize shrink height 10 px or 10 ppt
-    bindsym semicolon resize grow width 10 px or 10 ppt
+    bindsym j resize shrink width 30 px or 15 ppt
+    bindsym k resize grow height 30 px or 15 ppt
+    bindsym l resize shrink height 30 px or 15 ppt
+    bindsym semicolon resize grow width 30 px or 15 ppt
 
     # same bindings, but for the arrow keys
     bindsym Left resize shrink width 10 px or 10 ppt
@@ -234,11 +237,11 @@ bar {
 
 # Spotify
 # Mod2 is some workaround for i3 --version > 4.12
-  bindsym Control+Mod2+KP_5 exec ~/snippets/spotify_remote.sh playpause
-  bindsym Control+Mod2+KP_6 exec ~/snippets/spotify_remote.sh next
-  bindsym Control+Mod2+KP_4 exec ~/snippets/spotify_remote.sh previous
-  bindsym Control+Mod2+KP_7 exec --no-startup-id amixer -D pulse sset Master 5%-
-  bindsym Control+Mod2+KP_9 exec --no-startup-id amixer -D pulse sset Master 5%+
+  bindsym Control+KP_5 exec ~/snippets/spotify_remote.sh playpause
+  bindsym Control+KP_6 exec ~/snippets/spotify_remote.sh next
+  bindsym Control+KP_4 exec ~/snippets/spotify_remote.sh previous
+  bindsym Control+KP_7 exec --no-startup-id amixer -D pulse sset Master 5%-
+  bindsym Control+KP_9 exec --no-startup-id amixer -D pulse sset Master 5%+
 
   # old
   # exec_always --no-startup-id xrandr --output VIRTUAL1 --off --output DP1 --off --output HDMI1 --off --output VGA-1-2 --off --output LVDS1 --mode 1366x768 --pos 0x465 --rotate normal --output VGA1 --mode 1920x1080 --pos 1366x0 --rotate normal
@@ -255,6 +258,7 @@ bar {
   exec skype
   exec volumeicon
   exec ~/snippets/i3l.sh
+  exec desktime-linux
 
 # Yakuake style console
   # for_window [class="^floating\-console"] floating enable; resize shrink width 10000px; resize grow width 1915px; 
@@ -267,12 +271,15 @@ bar {
 # Program bindings
   # bindsym $mod+Return exec i3-sensible-terminal
   bindsym $mod+Return exec gnome-terminal
-  bindsym $mod+d exec rofi -show run -lines 4 -eh 2 -width 100 -padding 220 -opacity 85 -bw 0 -bg "$base01" -fg "$base07" -hlbg "$base01" -hlfg "#9575cd" -font "SNFS Display 16"
+  # bindsym $mod+d exec rofi -show run -lines 4 -eh 2 -width 100 -padding 220 -opacity 85 -bw 0 -bg "$base01" -fg "$base07" -hlbg "$base01" -hlfg "#9575cd" -font "SNFS Display 16"
+  bindsym $mod+d exec rofi -show run -padding 10 -lines 10 -bw 0 -font "SNFS Display 12"
   bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 #  bindsym F2 exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
   bindsym F2 exec --no-startup-id i3-dmenu-desktop
   
   bindsym Mod1+x exec ~/apps/imgur-screenshot/imgur-screenshot.sh
+  bindsym Mod1+Shift+x exec ~/apps/imgur-screenshot/imgur-screenshot.sh --edit true --edit-command "pinta %img"
+  
   # bindsym Print exec ~/apps/snapshotor-wrapper/shot.sh 
   # 1 on 2 monitors
   # bindsym $mod+F1 exec --no-startup-id xrandr --output VIRTUAL1 --off --output DP1 --off --output HDMI1 --off --output VGA-1-2 --off --output LVDS1 --mode 1366x768 --pos 0x465 --rotate normal --output VGA1 --mode 1920x1080 --pos 1366x0 --rotate normal
