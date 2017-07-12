@@ -58,7 +58,6 @@
   focus_follows_mouse no
   mouse_warping none
   workspace_auto_back_and_forth yes
-  no_focus [window_role="pop-up"] # ??
   focus_on_window_activation urgent
 
 # Bindings
@@ -140,7 +139,10 @@
   for_window [class="Wine"] floating enable
   for_window [class="(?i)yakyak"] floating disable
   for_window [window_role="pop-up"] floating enable
-
+  for_window [class="(?i)KeePass"] floating enable
+  for_window [instance="gtk-recordmydesktop"] floating enable
+  for_window [class="(?i)gtk-recordmydesktop"] floating enable
+  for_window [class="(?i)kazam"] floating enable
 # Move the current workspace to the next output
 # (effectively toggles when you only have two outputs)
   bindsym $mod+x move workspace to output right
@@ -237,11 +239,11 @@ bar {
 
 # Spotify
 # Mod2 is some workaround for i3 --version > 4.12
-  bindsym Control+KP_5 exec ~/snippets/spotify_remote.sh playpause
-  bindsym Control+KP_6 exec ~/snippets/spotify_remote.sh next
-  bindsym Control+KP_4 exec ~/snippets/spotify_remote.sh previous
-  bindsym Control+KP_7 exec --no-startup-id amixer -D pulse sset Master 5%-
-  bindsym Control+KP_9 exec --no-startup-id amixer -D pulse sset Master 5%+
+  bindsym Mod2+Control+KP_5 exec ~/snippets/spotify_remote.sh playpause
+  bindsym Mod2+Control+KP_6 exec ~/snippets/spotify_remote.sh next
+  bindsym Mod2+Control+KP_4 exec ~/snippets/spotify_remote.sh previous
+  bindsym Mod2+Control+KP_7 exec --no-startup-id amixer -D pulse sset Master 5%-
+  bindsym Mod2+Control+KP_9 exec --no-startup-id amixer -D pulse sset Master 5%+
 
   # old
   # exec_always --no-startup-id xrandr --output VIRTUAL1 --off --output DP1 --off --output HDMI1 --off --output VGA-1-2 --off --output LVDS1 --mode 1366x768 --pos 0x465 --rotate normal --output VGA1 --mode 1920x1080 --pos 1366x0 --rotate normal
@@ -255,7 +257,7 @@ bar {
   exec --no-startup-id xautolock -time 10 -locker '~/snippets/i3l.sh' -detectsleep &
   # exec --no-startup-id "i3-msg 'workspace $workspace9; append_layout /home/mjankovskis/.i3/workspaces/9.json'"
   exec nm-applet
-  exec skype
+  # exec skype
   exec volumeicon
   exec ~/snippets/i3l.sh
   exec desktime-linux
@@ -275,7 +277,7 @@ bar {
   bindsym $mod+d exec rofi -show run -padding 10 -lines 10 -bw 0 -font "SNFS Display 12"
   bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 #  bindsym F2 exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
-  bindsym F2 exec --no-startup-id i3-dmenu-desktop
+  bindsym F1 exec --no-startup-id i3-dmenu-desktop
   
   bindsym Mod1+x exec ~/apps/imgur-screenshot/imgur-screenshot.sh
   bindsym Mod1+Shift+x exec ~/apps/imgur-screenshot/imgur-screenshot.sh --edit true --edit-command "pinta %img"

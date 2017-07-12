@@ -9,6 +9,8 @@ read url
 # Download file from url
 echo "Downloading PhpStorm to ~/Downloads"
 cd ~/Downloads
+mkdir PhpStorm-EAP
+
 wget --no-check-certificate -O phpstorm.tar.gz ${url}
 tar -xzvf ~/Downloads/phpstorm.tar.gz -C ~/Downloads/PhpStorm-EAP
 rm ~/Downloads/phpstorm.tar.gz

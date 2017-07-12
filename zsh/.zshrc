@@ -130,3 +130,5 @@ if [[ -a "$HOME/.nvm" ]]; then
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 fi
+
+export LC_ALL="lv_LV.UTF-8"
