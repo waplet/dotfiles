@@ -281,6 +281,10 @@ bar {
   
   bindsym Mod1+x exec ~/apps/imgur-screenshot/imgur-screenshot.sh
   bindsym Mod1+Shift+x exec ~/apps/imgur-screenshot/imgur-screenshot.sh --edit true --edit-command "pinta %img"
+  bindsym Print exec ~/apps/imgur-screenshot/imgur-screenshot.sh --full
+  bindsym Mod1+Print ~/apps/imgur-screenshot/imgur-screenshot.sh --full --edit true --edit-command "pinta %img"
+  bindsym Shift+Print exec ~/apps/imgur-screenshot/imgur-screenshot.sh --window
+  bindsym Mod1+Shift+Print ~/apps/imgur-screenshot/imgur-screenshot.sh --window --edit true --edit-command "pinta %img"
   
   # bindsym Print exec ~/apps/snapshotor-wrapper/shot.sh 
   # 1 on 2 monitors
