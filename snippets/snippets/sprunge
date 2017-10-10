@@ -1,4 +1,4 @@
 #!/bin/zsh
 
-curl -sF 'sprunge=<-' http://sprunge.us | tr -d "\n" | tee >(xclip -selection clipboard)
+curl -sF 'sprunge=<-' http://sprunge.us | tee >(xclip -selection clipboard)
 
